@@ -1,26 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <AddUrl @add="add"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AddUrl from './components/AddUrl.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AddUrl
+  },
+  methods: {
+    add(value) {
+      console.log("App: Got emitted value from child (addUrl): " +value);
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
